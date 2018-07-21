@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="lib/angular-1.6.9/angular.min.js"></script>
+  <script src="lib/ngProgress/ngprogress.min.js"></script>
+  <link rel="stylesheet" href="lib/ngProgress/ngProgress.css">
+  <script src="app.js"></script>
+
+</head>
+
+<body>
+  <div ng-app="myApp" ng-controller="myCtrl"> 
+  
+      <form class="form-inline">
+          <div class="form-group">
+              <div>
+                <select class= "form-control" ng-model="filterValue" ng-options="option.value for option in options" >
+                </select>
+                </div>
+          </div>
+          <div class="form-group">
+              <div class="inner-addon right-addon">
+                  <span class="glyphicon glyphicon-search"></span>
+                  <input type="text" class="form-control" ng-model="searchText" placeholder="Search" />
+              </div>
+                  
+          </div>
+          <button type="submit" ng-click="performSearch()" class="btn btn-primary">Search</button>
+    
+        </form>
+
+    <br>
+    <br>
+
+   <div class="table-responsive">
+     <table class="table table-hover">
+       <thead>
+         <tr>
+           <th>List No</th>
+           <th>Exam No</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>List Agency Desc</th>
+           <th>List Title</th>
+           <th>Published Date</th>
+
+         </tr>
+       </thead>
+       <tbody>
+          <tr ng-repeat="arr1 in arr ">
+                <td>{{arr1.list_no}}</td>
+                <td>{{arr1.exam_no}}</td>
+                <td>{{arr1.first_name}}</td>
+                <td>{{arr1.last_name}}</td>
+                <td>{{arr1.list_agency_desc}}</td>
+                <td>{{arr1.list_title_desc}}</td>
+                <td>{{arr1.published_date}}</td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+
+  </div>
+</div>
+  </div>
+  
+</body>
+
+</html>
